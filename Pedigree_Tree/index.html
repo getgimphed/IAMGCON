@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <title>IAMGCON 2015</title>
+  <!-- filestart -->
+  <link rel="icon" type="image/vnd.microsoft.icon"  href="./img/favicon.ico" />
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet"/>
+  <link rel="Stylesheet" type="text/css" href="./css/style.css" />
+  <script type="text/javascript" src="./lib/jquery.1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <!-- wColorPicker -->
+      <link rel="Stylesheet" type="text/css" href="./lib/wColorPicker.min.css" />
+      <script type="text/javascript" src="./lib/wColorPicker.min.js"></script>
+
+      <!-- wPaint -->
+      <link rel="Stylesheet" type="text/css" href="./css/wPaint.min.css" />
+      <script type="text/javascript" src="./js/wPaint.min.js"></script>
+      <script type="text/javascript" src="./plugins/main/wPaint.menu.main.min.js"></script>
+      <script type="text/javascript" src="./plugins/text/wPaint.menu.text.min.js"></script>
+      <script type="text/javascript" src="./plugins/shapes/wPaint.menu.main.shapes.min.js"></script>
+      <script type="text/javascript" src="./plugins/file/wPaint.menu.main.file.min.js"></script>
+	<style>
+	
+	</style>
+
+	<script>
+		$(function() {
+    $(".item").draggable({
+        helper: 'clone',
+			revert:'invalid',
+			zIndex: 10000
+    });
+		$("#wPaint").droppable({
+		accept:".item",
+        drop: function(event, ui) {
+            $(this).append($(ui.draggable).clone());
+            $("#wPaint .item").addClass("dropped");
+            $(".dropped").removeClass("ui-draggable item");
+            $(".dropped").draggable();
+        }
+    }); 
+		});
+	</script>
+</head>
+	
+	<body>
+			<div class="col-md-12 heading">
+				<img class="col-md-1" src="img/iamg.png" height=40/> 
+				<span class="col-md-3 col-md-offset-3">IAMGCON 2015</span>
+				<img class="col-md-offset-3" src="img/shivamhospital.png" height=40 width=40 />
+		</div>
+		
+			<div class="col-md-2 left-pane">
+				<div class="left-pane-heading">Icon Panel</div>
+				<div class="items" style="color:white;">
+					Male : <div class="item"><img src="img/male1.png"/></div><br>
+					
+					Female : <div class="item"><img src="img/female2.png"/></div><br>
+					
+					Gender Not Specified : <div class="item"><img src="img/gender_not_known.png"/></div><br>
+					
+					X-Linked Carrier : <div class="item"><img src="img/x_linked.png"/></div><br>
+					
+					AutoSomal Carriers : <div class="item"><img src="img/autosimal_carrier_male.png"/></div>
+					<div class="item"><img src="img/autosimal_carrier_female.png"/></div><br><br>
+					
+					Affected Individuals : <div class="item"><img src="img/affected_male.png"/></div>
+					<div class="item"><img src="img/affected_female.png"/></div><br><br>
+					
+					Monozoic Twins : <div class="item"><img src="img/monozyno_twin.png"/></div><br>
+					Dizygotic twins : <div class="item"><img src="img/dizyno_twin.png"/></div><br>
+					
+					Spontaneous Abortion : <div class="item"><img src="img/spontaneous_abortion.png"/></div>
+					<div class="item"><img src="img/spontaneous_abortion_1.png"/></div><br><br>
+					
+					Termination Of Pregrancy : <div class="item"><img src="img/termination.png"/></div><br><br>
+					
+					Affected Spontaneous Abortion : <div class="item"><img src="img/affected_spontaneous_abortion.png"/></div><br>
+					
+					
+				</div>
+			</div>
+		
+		<div class="col-md-10" style="max-width:1100px;" id="drop">
+			 
+			 <form class="form" style="margin-top:2px;">
+				 <label for="name">Name:</label><input name="name" type="text" placeholder="Name" style="width:400px;"/>
+				 <label for="age">Age:</label><input name="age" type="text" placeholder="Age" style="width:80px;"/>				 <label for="age">Gender:</label><input name="Gender" type="text" placeholder="Gender"  style="width:100px;"/><br>
+				 <label for="comments">Comments:</label>	<textarea name="comments" type="text" placeholder="Comments"  style="width:100%;"></textarea>
+			 <button id="print" type="button" class="btn-warning btn btn-md col-md-offset-5" style="margin-top:5px; margin-bottom:5px;" onclick="printIt()">Print</button>
+			</form>
+
+			 <div id="wPaint"></div>
+			 <center id="wPaint-img"></center>
+		</div>
+		<div class="col-md-12 sponsor">Sponsored By- Shivam Hospital</div>
+	</body>
+      
+<script type="text/javascript">
+	var images = [
+		'test/uploads/wPaint.png',
+	];
+
+
+	function loadImgBg () {
+		this._showFileModal('bg', images);
+	}
+
+	function loadImgFg () {
+		this._showFileModal('fg', images);
+	}
+
+	// init wPaint
+	$('#wPaint').wPaint({
+		menuOffsetLeft: 300,
+		menuOffsetTop: 0,
+	 // saveImg: saveImg,
+		loadImgBg: loadImgBg,
+		loadImgFg: loadImgFg
+	});
+</script>
+
+<style>
+	@media print {
+		.wPaint-menu-holder{
+			display: none;
+		}
+	}
+</style>
+<script>
+		function printIt(){
+				window.print();
+				}
+	</script>
+</html>

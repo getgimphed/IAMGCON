@@ -1,0 +1,206 @@
+html , body {
+	height: 100%;
+	background-color:beige;
+}
+.heading{
+	text-align: center;
+	background-color:teal;
+	color: white;
+	font-size: 32px;
+ 	box-shadow: 0px 10px 5px #888888;
+}
+
+.bottom{
+	background-color: white;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+}
+.slider-ved{
+	margin-top:50px;
+	-moz-transform: scale(0.98);
+  -moz-transform-origin: 0 0;
+}
+#droppable{
+	border: 2px black dashed;
+	min-height: 420px;
+	margin-top: 50px;
+	text-align: center;
+	line-height: 300px;
+	font-size: 15px;
+	color: white;
+	font-size: 20px;
+	background-color: darkolivegreen;
+}
+.bjqs-next a{
+	margin-left: 10px;
+}
+.bjqs-prev a{
+	margin-right: 10px;
+}
+.bjqs-next a, .bjqs-prev a {
+	background-color: black !important;
+	color: white !important;
+}
+.bjqs-next a:hover, .bjqs-prev a:hover {
+	background-color: white !important;
+	color: black !important;
+}
+.draggable{
+	z-index: 999;
+}
+.droppable{
+	z-index: -1;
+}
+#img1_1 , #img2_1 , #img3_1 , #img4_1, #img5_1, #img6_1,
+#img7_1,#img8_1,#img9_1,#img10_1,#img11_1,#img12_1,#img13_1,
+#img14_1,#img15_1,#img16_1,#img17_1,#img18_1,#img19_1,#img20_1,
+#img21_1,#img22_1,#img23_1,#img24_1{
+	display:inline-block;
+	width:420px !important;
+}
+#li1 #img1_3, #li2 #img2_3, #li3 #img3_3, #li4 #img4_3,#li5 #img5_3,#li6 #img6_3,#li7 #img7_3,#li8 #img8_3,
+#li9 #img9_3,#li10 #img10_3,#li11 #img11_3,#li12 #img12_3, #li13 #img13_3, #li14 #img14_3, #li15 #img15_3, #li16 #img16_3,
+#li17 #img17_3,#li18 #img18_3,#li19 #img19_3, #li20 #img20_3,#li21 #img21_3,#li22 #img22_3,#li23 #img23_2,#li24 #img24_3{
+	display:inline;
+	width:100px !important;
+}
+
+
+<!-- CARD GAME -->
+
+/* Add some margin to the page and set a default font and colour */
+
+body {
+  margin: 30px;
+  font-family: "Georgia", serif;
+  line-height: 1.8em;
+  color: #333;
+}
+
+/* Give headings their own font */
+
+h1, h2, h3, h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main content area */
+
+#content {
+  margin: 80px 70px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  font-size: 1.5em;
+}
+
+/* Slots for final card positions */
+
+#cardSlots {
+  margin: 50px auto 0 auto;
+  background: #ddf;
+}
+
+/* The initial pile of unsorted cards */
+
+#cardPile {
+  margin: 0 auto;
+  background: #ffd;
+}
+
+#cardSlots, #cardPile {
+  width: 750px;
+  height: 70%;
+  padding: 20px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+/* Individual cards and slots */
+
+#cardSlots div, #cardPile div {
+  float: left;
+  width: 48px;
+  height: 200px;
+  padding: 10px;
+  padding-top: 0px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+  background: #fff;
+	font-size: 1.2em;
+	color: cadetblue;
+	margin-top: 3px;
+}
+
+#cardSlots div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}
+
+#cardSlots div.hovered {
+  background: #aaa;
+}
+
+#cardSlots div {
+  border-style: dashed;
+}
+
+#cardPile div {
+  background: #666;
+  color: #fff;
+  font-size: 50px;
+  text-shadow: 0 0 3px #000;
+}
+
+#cardPile div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+.ui-droppable-disabled img{
+top: 0 !important;
+left: -8 !important;
+height: 160px !important;
+width: 40px !important;
+}
+
+
+.bjqs-next a{
+	top:130% !important;
+}
+.bjqs-prev a{
+	top:130% !important;
+}
+
+.sponsor{
+	background-color: teal;
+	color: white;
+	text-align: center;
+	font-size:1.4em;
+}
